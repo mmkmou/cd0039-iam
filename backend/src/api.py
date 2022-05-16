@@ -185,7 +185,7 @@ def unprocessable(error):
     implement error handler for 404
 '''
 @app.errorhandler(404)
-def unprocessable(error):
+def not_found(error):
     return jsonify({
         "success": False,
         "error": 404,
@@ -196,7 +196,7 @@ def unprocessable(error):
     implement error handler for AuthError 
 '''
 @app.errorhandler(401)
-def unprocessable(error):
+def unauthorized(error):
     return jsonify({
         "success": False,
         "error": 401,
@@ -204,7 +204,7 @@ def unprocessable(error):
     }), 401
 
 @app.errorhandler(403)
-def unprocessable(error):
+def forbidden(error):
     return jsonify({
         "success": False,
         "error": 403,
